@@ -1,0 +1,9 @@
+id: DateTools
+name: DateTools
+version: 0.1.0
+
+tags:
+    function:
+        EntryUnpublishingDate: $DateTools::MT::DateTools::Tags::hdlr_EntryUnpublishingDate
+    modifier:
+        unix_timestamp: $DateTools::MT::DateTools::Tags::hdlr_unix_timestamp
