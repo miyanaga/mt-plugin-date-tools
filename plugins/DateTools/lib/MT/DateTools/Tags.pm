@@ -10,6 +10,7 @@ sub plugin { MT->component('DateTools') }
 sub hdlr_unix_timestamp {
     my ( $text, $arg, $ctx ) = @_;
 
+    return '' unless $text;
     return $ctx->error(plugin->translate('Use like this: format="%Y%m%d%H%M%S" unix_timestamp="1"'))
         unless $text =~ /^[0-9]{14}$/;
 
@@ -23,7 +24,7 @@ sub hdlr_EntryUnpublishingDate {
         or return $ctx->_no_entry_error();
     return $ctx->error(plugin->translate('This Movable Type does not support scheduled unpublishing.'))
         unless $e->can('unpublished_on');
-    $args->{ts} = $e->unpublished_on;
+    $args->{ts} = $e->unpublished_on || return '';
     return $ctx->build_date($args);
 }
 
