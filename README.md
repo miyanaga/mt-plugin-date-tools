@@ -12,3 +12,9 @@ Output entry unpublished_on.
 
 To compare with time() in PHP.
 
+## AllowPastUnpublishedOn
+
+Allows user to set past unpublished date. If the unpublished date is past date, draft the entry or the page instead of an error.
+
+    # mt-config.cgi
+    AllowPastUnpublishedOn 1

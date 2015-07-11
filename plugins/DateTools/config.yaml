@@ -1,6 +1,13 @@
 id: DateTools
 name: DateTools
-version: 0.1.0
+version: 0.2.0
+
+config_settings:
+    AllowPastUnpublishedOn:
+        default: 0
+
+applications:
+    cms: $DateTools::MT::DateTools::CMS::load_registry
 
 tags:
     function:
